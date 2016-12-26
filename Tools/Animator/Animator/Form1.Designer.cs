@@ -30,6 +30,8 @@
     {
       this.components = new System.ComponentModel.Container();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.txtFrames = new System.Windows.Forms.Label();
+      this.label6 = new System.Windows.Forms.Label();
       this.txtHeight = new System.Windows.Forms.Label();
       this.txtWidth = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
@@ -44,13 +46,11 @@
       this.groupBox3 = new System.Windows.Forms.GroupBox();
       this.txtMessage = new System.Windows.Forms.Label();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
+      this.radStretch = new System.Windows.Forms.RadioButton();
+      this.radZoom = new System.Windows.Forms.RadioButton();
+      this.radCenter = new System.Windows.Forms.RadioButton();
       this.txtInterval = new System.Windows.Forms.Label();
       this.timerAnimator = new System.Windows.Forms.Timer(this.components);
-      this.radCenter = new System.Windows.Forms.RadioButton();
-      this.radZoom = new System.Windows.Forms.RadioButton();
-      this.radStretch = new System.Windows.Forms.RadioButton();
-      this.txtFrames = new System.Windows.Forms.Label();
-      this.label6 = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.picSourceImage)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picAnimation)).BeginInit();
@@ -76,6 +76,25 @@
       this.groupBox1.Size = new System.Drawing.Size(216, 112);
       this.groupBox1.TabIndex = 1;
       this.groupBox1.TabStop = false;
+      // 
+      // txtFrames
+      // 
+      this.txtFrames.AutoSize = true;
+      this.txtFrames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+      this.txtFrames.Location = new System.Drawing.Point(144, 64);
+      this.txtFrames.Name = "txtFrames";
+      this.txtFrames.Size = new System.Drawing.Size(14, 13);
+      this.txtFrames.TabIndex = 6;
+      this.txtFrames.Text = "0";
+      // 
+      // label6
+      // 
+      this.label6.AutoSize = true;
+      this.label6.Location = new System.Drawing.Point(104, 64);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(41, 13);
+      this.label6.TabIndex = 5;
+      this.label6.Text = "Frames";
       // 
       // txtHeight
       // 
@@ -128,7 +147,7 @@
       // 
       // picAnimation
       // 
-      this.picAnimation.BackColor = System.Drawing.Color.DarkRed;
+      this.picAnimation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
       this.picAnimation.Dock = System.Windows.Forms.DockStyle.Fill;
       this.picAnimation.Location = new System.Drawing.Point(0, 112);
       this.picAnimation.Name = "picAnimation";
@@ -235,30 +254,16 @@
       this.groupBox2.TabIndex = 2;
       this.groupBox2.TabStop = false;
       // 
-      // txtInterval
+      // radStretch
       // 
-      this.txtInterval.Location = new System.Drawing.Point(8, 64);
-      this.txtInterval.Name = "txtInterval";
-      this.txtInterval.Size = new System.Drawing.Size(88, 13);
-      this.txtInterval.TabIndex = 11;
-      this.txtInterval.Text = "100";
-      this.txtInterval.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-      // 
-      // timerAnimator
-      // 
-      this.timerAnimator.Enabled = true;
-      this.timerAnimator.Tick += new System.EventHandler(this.timerAnimator_Tick);
-      // 
-      // radCenter
-      // 
-      this.radCenter.AutoSize = true;
-      this.radCenter.Location = new System.Drawing.Point(32, 88);
-      this.radCenter.Name = "radCenter";
-      this.radCenter.Size = new System.Drawing.Size(56, 17);
-      this.radCenter.TabIndex = 12;
-      this.radCenter.Text = "Center";
-      this.radCenter.UseVisualStyleBackColor = true;
-      this.radCenter.CheckedChanged += new System.EventHandler(this.radCenter_CheckedChanged);
+      this.radStretch.AutoSize = true;
+      this.radStretch.Location = new System.Drawing.Point(208, 88);
+      this.radStretch.Name = "radStretch";
+      this.radStretch.Size = new System.Drawing.Size(59, 17);
+      this.radStretch.TabIndex = 14;
+      this.radStretch.Text = "Stretch";
+      this.radStretch.UseVisualStyleBackColor = true;
+      this.radStretch.CheckedChanged += new System.EventHandler(this.radStretch_CheckedChanged);
       // 
       // radZoom
       // 
@@ -273,35 +278,30 @@
       this.radZoom.UseVisualStyleBackColor = true;
       this.radZoom.CheckedChanged += new System.EventHandler(this.radZoom_CheckedChanged);
       // 
-      // radStretch
+      // radCenter
       // 
-      this.radStretch.AutoSize = true;
-      this.radStretch.Location = new System.Drawing.Point(208, 88);
-      this.radStretch.Name = "radStretch";
-      this.radStretch.Size = new System.Drawing.Size(59, 17);
-      this.radStretch.TabIndex = 14;
-      this.radStretch.Text = "Stretch";
-      this.radStretch.UseVisualStyleBackColor = true;
-      this.radStretch.CheckedChanged += new System.EventHandler(this.radStretch_CheckedChanged);
+      this.radCenter.AutoSize = true;
+      this.radCenter.Location = new System.Drawing.Point(32, 88);
+      this.radCenter.Name = "radCenter";
+      this.radCenter.Size = new System.Drawing.Size(56, 17);
+      this.radCenter.TabIndex = 12;
+      this.radCenter.Text = "Center";
+      this.radCenter.UseVisualStyleBackColor = true;
+      this.radCenter.CheckedChanged += new System.EventHandler(this.radCenter_CheckedChanged);
       // 
-      // txtFrames
+      // txtInterval
       // 
-      this.txtFrames.AutoSize = true;
-      this.txtFrames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-      this.txtFrames.Location = new System.Drawing.Point(144, 64);
-      this.txtFrames.Name = "txtFrames";
-      this.txtFrames.Size = new System.Drawing.Size(14, 13);
-      this.txtFrames.TabIndex = 6;
-      this.txtFrames.Text = "0";
+      this.txtInterval.Location = new System.Drawing.Point(8, 64);
+      this.txtInterval.Name = "txtInterval";
+      this.txtInterval.Size = new System.Drawing.Size(88, 13);
+      this.txtInterval.TabIndex = 11;
+      this.txtInterval.Text = "100";
+      this.txtInterval.TextAlign = System.Drawing.ContentAlignment.TopCenter;
       // 
-      // label6
+      // timerAnimator
       // 
-      this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(104, 64);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(41, 13);
-      this.label6.TabIndex = 5;
-      this.label6.Text = "Frames";
+      this.timerAnimator.Enabled = true;
+      this.timerAnimator.Tick += new System.EventHandler(this.timerAnimator_Tick);
       // 
       // Form1
       // 
